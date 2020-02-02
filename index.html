@@ -39,6 +39,11 @@
                     <li><a href="#what">About DSC</a></li>
                     <li><a href="#developing-team">Our Team</a></li>
                 </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
             </nav>
         </div>
 
@@ -60,12 +65,44 @@
     <section class="container" id="registration">
         <h2>Registration</h2>
         <hr>
-        <div class="reg-content">
-            <div class="bg">
-                <h3>Hack The Web</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, ea?</p>
-                <a href="#" class="btn">Registration</a>  
-            </div>
+        <div class="reg-content" data-aos="zoom-in" data-aos-duration="1000">
+            <ul>
+                <li>
+                    <div class="content c1">
+                        <h3>Event 1</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn">Register</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="content c2">
+                        <h3>Event 2</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn">Register</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="content c3">
+                        <h3>Event 3</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn">Register</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="content c4">
+                        <h3>Event 4</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn">Register</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="content c5">
+                        <h3>Event 5</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn">Register</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -329,10 +366,14 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
-    <script type="text/script" src="./js/main.js"></script>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
         AOS.init();
+        $(document).ready(function(){
+            $('.event').slick();
+        });
     </script>
 
 </body>

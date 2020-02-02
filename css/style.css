@@ -6,6 +6,10 @@
     --red-color:#F23E2E;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     padding:0px;
     margin:0px;
@@ -30,7 +34,8 @@ body{
     background-color: #333;
     border: none;
     font-size: 18px;
-    padding: 13px 20px;
+    padding: 10px 15px;
+    border-radius: 20px;
 }
 .btn-light{
     background:#f4f4f4;
@@ -68,7 +73,6 @@ header{
     height:100vh;
     box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
 }
-
 #navbar{
     width:100%;
     display: flex;
@@ -78,32 +82,30 @@ header{
     overflow: auto;
     z-index: 2;
 }
-
 .nav-logo{
     height:100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .nav-logo img{
     height:50px;
     margin-bottom:5px;
 }
-
 .nav-logo > span{
     margin-left:0.75rem;
     font-size:1.5rem;
     color:#333;
 }
-
+#navbar .hamburger{
+    display: none;
+}
 #navbar ul{
     list-style: none;
     display: flex;
     align-items: center;
 
 }
-
 #navbar ul li{
     display: block;
     padding:0.2rem;
@@ -145,7 +147,32 @@ header{
         transform: translateY(0px);
     }
 }
-
+@media(max-width:768px){
+    #navbar{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        position:relative;
+        justify-content: space-between;
+        align-items: center;
+        overflow: auto;
+        z-index: 2;
+    }
+    #navbar ul li a{
+        padding:0.1rem;
+        text-decoration: none;
+        color:#333;
+        display: block;
+        font-size:0.9rem;
+        font-weight: 200px;
+    }
+    #navbar ul li{
+        display: block;
+        padding:0.1rem;
+        margin:0.5rem 1rem;
+        transition: all 0.4s ease-in-out;
+    }
+}
 
 /* showcase */
 
@@ -209,6 +236,70 @@ header{
 #showcase h4{
     margin-bottom:5rem;
 }
+@media(max-width:768px){
+    #showcase{
+        margin-top:20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 0.5rem;
+        /* overflow-x: scroll; */
+    }
+    #showcase .img1{
+        margin-bottom: 10px;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: row;
+        height: 5px;
+    }
+    #showcase #left img{
+        transform: translateX(-95px);
+        height:50px;
+        /* display: inline; */
+        animation-name:bounce;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.2s;
+        animation-iteration-count: infinite;
+    }
+    #showcase #right img{
+        height:50px;
+        transform: translateX(93px);
+        animation-name:bounce-right;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.2s;
+        animation-iteration-count: infinite;
+    }   
+    @keyframes bounce{
+        0%{
+            transform: translateX(-95px);
+        }
+        50%{
+            transform: translateX(-90px);
+        }
+        100%{
+            transform: translateX(-95px);
+        }
+    }
+    @keyframes bounce-right{
+        0%{
+            transform: translateX(93px);
+        }
+        50%{
+            transform: translateX(85px);
+        }
+        100%{
+            transform: translateX(93px);
+        }
+    }
+    #showcase h2{
+        font-size:1rem;
+    }
+}
 
 
 /* event */
@@ -220,31 +311,77 @@ header{
 #registration h2{
     text-align: center;
 }
-.reg-content{
-    margin-top:2rem;
-    height:20rem;
-    background: url('../img/background1.jpeg') no-repeat center center/cover;
+#registration .reg-content{
+    height:75vh;
+    position: relative;
 }
-.reg-content .bg{
-    background: rgba(0,0,0,0.5);
-    width:30%;
-    height:100%;
-    color:var(--primary-color);
+.reg-content ul{
+    position: absolute;
+    width: 85%;
+    height: 50vh;
+    background-color: #ccc;
+    margin: 7%;
+    padding: 0;
+}
+.reg-content ul li{
+    list-style: none;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    transition: 0.5s;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border: 2px solid white;
 }
-.reg-content .bg p{
-    font-size: 0.7rem;
+.reg-content ul:hover li{
+    width: 13.75%;
 }
-.reg-content .bg a{
+.reg-content ul li:hover{
+    width: 45%;
+}
+.reg-content ul li:nth-child(1){
+    background-image: url(../img/img1.jfif);
+    background-size: cover;
+    background-position: center;
+}
+.reg-content ul li:nth-child(2){
+    background-image: url(../img/img2.jfif);
+    background-size: cover;
+    background-position: center;
+}
+.reg-content ul li:nth-child(3){
+    background-image: url(../img/img3.jfif);
+    background-size: cover;
+    background-position: center;
+}
+.reg-content ul li:nth-child(4){
+    background-image: url(../img/img4.jfif);
+    background-size: cover;
+    background-position: center;
+}
+.reg-content ul li:nth-child(5){
+    background-image: url(../img/img5.jfif);
+    background-size: cover;
+    background-position: center;
+}
+.reg-content ul li .content{
+    position: relative;
+    top: 62%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    opacity: 0;
+    padding: 2%;
+}
+.reg-content ul li .content p {
+    font-size:0.9rem;
+}
+.reg-content ul li:hover .content{
+    opacity: 1;
+}
+.reg-content ul li a{
     text-decoration: none;
-    font-size: 0.7rem;
-}
-.reg-content .bg .btn{
-    border-radius: 10px;
+    font-size: 0.8rem;
 }
 
 
@@ -289,6 +426,29 @@ header{
     /* border-radius: 50%; */
     background: url('../img/event1.jpg') no-repeat center center/cover;
 }
+@media(max-width:768px){
+    #what{
+        display: flex;
+        width:100%;
+        height:25rem;
+        justify-content: center;
+        margin:2rem 0.5rem;
+        overflow: hidden;
+        border-top-right-radius: 10%;
+        border-bottom-right-radius: 10%;
+        box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
+    }   
+    #what .what-content span h2{
+        font-size: 1rem;
+        height: 20px;
+        margin: 0px;
+        display: inline;
+    }
+    #what .what-content p{
+        font-size: 0.8rem;
+        padding-top:25px;
+    }
+}
 
 /* vision of dscnuv */
 
@@ -323,6 +483,28 @@ header{
     /* border-radius: 50%; */
     background: url('../img/event2.jpg') no-repeat center center/cover;
 }
+@media(max-width:768px){
+    #vision{
+        display: flex;
+        width:100%;
+        height:25rem;
+        justify-content: center;
+        margin:2rem 0.5rem;
+        overflow: hidden;
+        border-top-right-radius: 10%;
+        border-bottom-right-radius: 10%;
+        box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
+    }   
+    #vision .vision-content  h2{
+        font-size: 1rem;
+        text-align: center;
+    }
+    #vision .vision-content p{
+        font-size: 0.8rem;
+        padding-top:25px;
+    }
+}
+
 
 /* hall of fram */
 
@@ -395,7 +577,7 @@ header{
     background: rgba(0,0,0,0.5);
     color:var(--primary-color);
 }
-.card .back{
+.card .back{    
     position: absolute;
     top:0px;
     left:0px;
@@ -530,7 +712,7 @@ header{
     #timeline > ul li:nth-child(even) > div:before{
         left:-15px;
         border-width:8px 16px 8px 0;
-        border-color:transparent var(--blue-color) transparent transparent;
+        border-color:transparent #333 transparent transparent;
     }
 }
 
@@ -544,6 +726,7 @@ header{
     align-items: center;
     position: relative;
     overflow:auto ;
+    overflow-x: hidden;
     height:50rem;
 }
 #developing-team hr{
@@ -561,17 +744,20 @@ header{
 }
 #developing-team .card2{
     width:30.33%;
+    margin-left: 10px;
     /* height:20rem; */
     overflow: auto;
     line-height: 2rem;
     position: absolute;
     top:440px;
-    left:0px;
+    left:10px;
+    /* right:50px; */
     box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
     text-align: center;
 }
 #developing-team .card3{
     width:30.33%;
+    margin-right: 10px;
     /* height:15rem; */
     overflow: auto;
     line-height: 2rem;
@@ -623,7 +809,7 @@ header{
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
+    animation-delay: 5s;
     animation-iteration-count: 1;
 }   
 @keyframes fade{
@@ -720,6 +906,12 @@ header{
         box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
     }
 }
+@media(max-width:700px){
+    #developing-team .card1,#developing-team .card2,#developing-team .card3{
+        width:75%;
+    }
+}
+
 
 /* footer */
 
