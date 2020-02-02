@@ -18,6 +18,7 @@ body{
     font-family:'Roboto', sans-serif;
     background: var(--primary-color);
     overflow-x: hidden;
+    width:100vw;
 }
 
 /* utilities */
@@ -156,6 +157,7 @@ header{
         justify-content: space-between;
         align-items: center;
         overflow: auto;
+        overflow-x: hidden;
         z-index: 2;
     }
     #navbar ul li a{
@@ -163,7 +165,7 @@ header{
         text-decoration: none;
         color:#333;
         display: block;
-        font-size:0.9rem;
+        font-size:0.5rem;
         font-weight: 200px;
     }
     #navbar ul li{
@@ -203,7 +205,7 @@ header{
 }
 #showcase #right{
     height:100px;
-    transform: translateX(230px);
+    transform: translateX(280px);
     animation-name:bounce-right;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
@@ -224,13 +226,13 @@ header{
 }
 @keyframes bounce-right{
     0%{
-        transform: translateX(230px);
+        transform: translateX(280px);
     }
     50%{
-        transform: translateX(190px);
+        transform: translateX(230px);
     }
     100%{
-        transform: translateX(230px);
+        transform: translateX(280px);
     }
 }
 #showcase h4{
@@ -239,6 +241,7 @@ header{
 @media(max-width:768px){
     #showcase{
         margin-top:20vh;
+        width:100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -254,48 +257,12 @@ header{
         height: 5px;
     }
     #showcase #left img{
-        transform: translateX(-95px);
         height:50px;
         /* display: inline; */
-        animation-name:bounce;
-        animation-duration: 1s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-delay: 0.2s;
-        animation-iteration-count: infinite;
     }
     #showcase #right img{
         height:50px;
-        transform: translateX(93px);
-        animation-name:bounce-right;
-        animation-duration: 1s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-delay: 0.2s;
-        animation-iteration-count: infinite;
     }   
-    @keyframes bounce{
-        0%{
-            transform: translateX(-95px);
-        }
-        50%{
-            transform: translateX(-90px);
-        }
-        100%{
-            transform: translateX(-95px);
-        }
-    }
-    @keyframes bounce-right{
-        0%{
-            transform: translateX(93px);
-        }
-        50%{
-            transform: translateX(85px);
-        }
-        100%{
-            transform: translateX(93px);
-        }
-    }
     #showcase h2{
         font-size:1rem;
     }
@@ -699,7 +666,7 @@ header{
     }
 }
 
-@media(max-width:600px){
+@media(max-width:768px){
     #timeline > ul li{
         margin-left:20px;
     }
@@ -744,13 +711,13 @@ header{
 }
 #developing-team .card2{
     width:30.33%;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     /* height:20rem; */
     overflow: auto;
     line-height: 2rem;
     position: absolute;
     top:440px;
-    left:10px;
+    left:5px;
     /* right:50px; */
     box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
     text-align: center;
@@ -908,7 +875,7 @@ header{
 }
 @media(max-width:700px){
     #developing-team .card1,#developing-team .card2,#developing-team .card3{
-        width:75%;
+        width:100%;
     }
 }
 
