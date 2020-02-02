@@ -253,11 +253,12 @@ header{
 #what{
     display: flex;
     width:80%;
+    height:25rem;
     justify-content: center;
     margin:2rem 0.5rem;
     overflow: auto;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
     box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
 }
 
@@ -273,7 +274,7 @@ header{
     display: inline;
 }
 #what .what-content img{
-    margin:0 auto;
+    margin: 0px auto;
     height: 25px;
     display: inline;
 }
@@ -282,9 +283,10 @@ header{
 }
 #what .what-img{
     flex:1;
-    height:350px;
+    display: block;
+    height:100%;
     overflow: hidden;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background: url('../img/event1.jpg') no-repeat center center/cover;
 }
 
@@ -293,12 +295,13 @@ header{
 #vision{
     display: flex;
     width:80%;
+    height:25rem;
     justify-content: center;
     margin:2rem 0.5rem;
     float:right;
     overflow: auto;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
     box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
 }
 
@@ -315,16 +318,16 @@ header{
 }
 #vision .vision-img{
     flex:1;
-    height:350px;
+    height:100%;
     overflow: hidden;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background: url('../img/event2.jpg') no-repeat center center/cover;
 }
 
 /* hall of fram */
 
 #hall-of-frame{
-    margin:4rem 4rem;
+    margin:4rem auto;
 }
 
 #hall-of-frame h2{
@@ -334,11 +337,14 @@ header{
 .frames{
     margin:2rem 1rem;
     display:flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-items: center;
 }
 .card{
     position: relative;
+    margin-top:2rem;
     height:20rem;
     width:20rem;
     background: #f4f4f4;
@@ -429,7 +435,7 @@ header{
 /* core team */
 
 #timeline{
-    margin:4rem 4rem;
+    margin:4rem auto;
 }
 #timeline h2{
     text-align: center;
@@ -617,8 +623,8 @@ header{
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
 }   
 @keyframes fade{
     from{
@@ -633,7 +639,87 @@ header{
 #developing-team .card1 table td:nth-child(1),#developing-team .card2 table td:nth-child(1),#developing-team .card3 table td:nth-child(1){
     border-right: 5% dotted #333;
 }
-
+@media(max-width:1000px){
+    #developing-team{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow:auto ;
+        height:110rem;
+    }
+    #developing-team .card1{
+        flex:1;
+        width:40.33%;
+        margin-bottom: 1rem;
+        /* height:70rem; */
+        overflow: auto;
+        position: relative;
+        top:0px;
+        box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
+        text-align: center;
+        line-height: 2rem;
+    }
+    #developing-team .card2{
+        width:40.33%;
+        flex:1;
+        margin-bottom: 1rem;
+        /* height:20rem; */
+        overflow: auto;
+        line-height: 2rem;
+        position: relative;
+        top: 0px;
+        /* left:0px; */
+        box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
+        text-align: center;
+    }
+    #developing-team .card3{
+        width:40.33%;
+        flex:1;
+        margin-bottom: 1rem;
+        height:70rem;
+        overflow: auto;
+        line-height: 2rem;
+        position: relative;
+        top:0px;
+        /* right:0px; */
+        box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
+        text-align: center;
+    }   
+    #developing-team .profile-img{
+    z-index:2;
+    height:150px;
+    width:150px;
+    position: relative; 
+    top:35px;
+    background: url('../img/dhyey.jpg') no-repeat center center/cover;
+    border-radius: 50%;
+    box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7); 
+    }
+    #developing-team .profile-img2{
+        z-index:2;
+        position: relative;
+        top:35px;
+        left:0px;
+        height:150px;
+        width:150px;
+        background: url('../img/priyansh.JPG') no-repeat center center/cover;
+        border-radius: 50%;
+        box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
+    }
+    #developing-team .profile-img3{
+        z-index:2;
+        position: relative;
+        top:35px;
+        right:0px;
+        height:150px;
+        width:150px;
+        background: url('../img/abhishek.JPG') no-repeat center center/cover;
+        border-radius: 50%;
+        box-shadow: 0px 9px 38px -15px rgba(0,0,0,0.7);
+    }
+}
 
 /* footer */
 
